@@ -9,14 +9,19 @@ describe 'user stories' do
     airport = Airport.new
     expect { airport.land(plane).not_to raise_error }
   end
-end
-
 # As an air traffic controller
 # So I can get passengers on the way to their destination
 # I want to instruct a plane to take off from an airport and confirm
 # that it is no longer in the airport
 # plane <------take_off------> airport
 # plane <------left?-------> true/false
+
+  it 'so that plane will take from airport instruct plane to take off' do
+    plane = Plane.new
+    airport = Airport.new
+    expect { airport.land(plane).not_to raise_error }
+  end
+end
 #
 # As an air traffic controller
 # To ensure safety
