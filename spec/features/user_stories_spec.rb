@@ -13,13 +13,14 @@ describe 'user stories' do
 # So I can get passengers on the way to their destination
 # I want to instruct a plane to take off from an airport and confirm
 # that it is no longer in the airport
-# plane <------take_off------> airport
+# airport <------take_off------> plane
 # plane <------left?-------> true/false
 
-  it 'so that plane will take from airport instruct plane to take off' do
+  it 'so that plane will take from airport instruct plane to take off and confirm not in airport' do
     plane = Plane.new
     airport = Airport.new
     expect { airport.land(plane).not_to raise_error }
+    expect { plane.left?.to eq true }
   end
 end
 #
