@@ -2,9 +2,10 @@ require 'airport.rb'
 
 describe Airport do
   subject(:airport) { described_class.new(10) }
-  
+  #DEFAULT_CAPACITY = 10
+  #capacity = 10
   it 'cannot land plane when airport full' do
-    10.times do
+    Airport::DEFAULT_CAPACITY.times do
       airport.land(:plane)
     end
     expect { airport.land(:plane).to raise_error 'airport is full, cannot land plane' } 
